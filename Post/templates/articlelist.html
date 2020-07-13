@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<head>
+    <style>
+        li{
+            list-style: none;
+        }
+    </style>
+</head>
+<a href="{% url 'posts:article-create'  %}">new</a>
+
+<ul>
+    {% for instance in object_list %}
+    <li><a href='{{ instance.get_absolute_url }}'>{{ instance.title }}</a></li>
+{% endfor %}
+</ul>
+
+
+
+{% endblock %}
